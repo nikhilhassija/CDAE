@@ -1,7 +1,7 @@
 import numpy
 
 def success_rate(pred, true):
-	cnt = 0
+	cnt = 0.00
 	for i in range(pred.shape[0]):
 		t = numpy.where(true[i] == 1) # true set
 		ary = numpy.intersect1d(pred[i], t)
@@ -10,7 +10,7 @@ def success_rate(pred, true):
 	return cnt * 100 / pred.shape[0]
 
 def precision(pred, true):
-	p = 0
+	p = 0.00
 	for i in range(pred.shape[0]):
 		t = numpy.where(true[i] == 1) # true set
 		ary = numpy.intersect1d(pred[i], t)
@@ -19,7 +19,7 @@ def precision(pred, true):
 	return p * 100 / pred.shape[0]
 
 def recall(pred, true):
-	p = 0
+	p = 0.00
 
 	for i in range(pred.shape[0]):
 		true_set = numpy.where(true[i] == 1) # true set
@@ -35,12 +35,12 @@ def recall(pred, true):
 # AP  = (sigma_K^N (precision @ k * rel(k))) / (min(N, true_set.shape[0])
 
 def Map(pred, true):
-	MAP = 0
+	MAP = 0.00
 
 	for user in range(pred.shape[0]):
 		true_set = numpy.where(true[user] == 1)
 
-		AP = 0
+		AP = 0.00
 
 		for k in range(1, pred.shape[1] + 1):
 			first_k = pred[user, -k:]
